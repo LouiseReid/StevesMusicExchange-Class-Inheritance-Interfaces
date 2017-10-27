@@ -14,7 +14,7 @@ public class PianoTest {
 
     @Before
     public void before() {
-        piano = new Piano("wood", "black", "percussion", 150, 300, 88, 2);
+        piano = new Piano("wood", "black", InstrumentTypes.PERCUSSION, 150, 300, 88, 2);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class PianoTest {
 
     @Test
     public void hasType(){
-        assertEquals("percussion", piano.getType());
+        assertEquals(InstrumentTypes.PERCUSSION, piano.getType());
     }
 
     @Test

@@ -1,5 +1,8 @@
 package com.example.louisereid.stevesmusicexchange;
 
+import com.example.louisereid.stevesmusicexchange.Behaviours.Playable;
+import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
+
 /**
  * Created by louisereid on 27/10/2017.
  */
@@ -8,11 +11,11 @@ package com.example.louisereid.stevesmusicexchange;
 
     String material;
     String colour;
-    String type;
+    InstrumentTypes type;
     int buyPrice;
     int sellPrice;
 
-    public Instrument(String material, String colour, String type, int buyPrice, int sellPrice) {
+    public Instrument(String material, String colour, InstrumentTypes type, int buyPrice, int sellPrice) {
         this.material = material;
         this.colour = colour;
         this.type = type;
@@ -28,7 +31,7 @@ package com.example.louisereid.stevesmusicexchange;
         return colour;
     }
 
-    public String getType() {
+    public InstrumentTypes getType() {
         return type;
     }
 

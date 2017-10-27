@@ -15,7 +15,7 @@ public class TrumpetTest {
 
     @Before
     public void before(){
-        trumpet = new Trumpet("brass", "brass", "wind", 50, 175, 3);
+        trumpet = new Trumpet("brass", "brass", InstrumentTypes.BRASS, 50, 175, 3);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class TrumpetTest {
 
     @Test
     public void hasType(){
-        assertEquals("wind", trumpet.getType());
+        assertEquals(InstrumentTypes.BRASS, trumpet.getType());
     }
 
     @Test

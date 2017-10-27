@@ -1,6 +1,8 @@
 package com.example.louisereid.stevesmusicexchange;
 
 
+import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
+
 import java.util.ArrayList;
 
 /**
@@ -27,4 +29,13 @@ public class Shop {
         return this.stock.remove(0);
 
     }
+
+    public int totalProfit(){
+        int profit = 0;
+        for(Sellable sellable : stock){
+            profit += sellable.calcMarkUp();
+        }
+        return profit;
+    }
+
 }

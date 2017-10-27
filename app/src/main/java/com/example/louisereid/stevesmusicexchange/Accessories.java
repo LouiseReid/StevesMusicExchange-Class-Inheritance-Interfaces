@@ -1,10 +1,12 @@
 package com.example.louisereid.stevesmusicexchange;
 
+import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
+
 /**
  * Created by louisereid on 27/10/2017.
  */
 
-abstract public class Accessories implements Sellable{
+abstract public class Accessories implements Sellable {
 
     String description;
     int buyPrice;

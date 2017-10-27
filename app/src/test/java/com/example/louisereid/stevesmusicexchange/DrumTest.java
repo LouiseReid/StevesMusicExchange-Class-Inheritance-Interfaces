@@ -15,7 +15,7 @@ public class DrumTest {
 
     @Before
     public void before() {
-        drum = new Drum("aluminium", "silver", "percussion", 100, 250, 5, 2);
+        drum = new Drum("aluminium", "silver", InstrumentTypes.PERCUSSION, 100, 250, 5, 2);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class DrumTest {
 
     @Test
     public void hasType(){
-        assertEquals("percussion", drum.getType());
+        assertEquals(InstrumentTypes.PERCUSSION, drum.getType());
     }
 
     @Test
