@@ -6,6 +6,6 @@ package com.example.louisereid.stevesmusicexchange.Behaviours;
 
 public interface Discountable {
 
-    double calcDiscountedPrice(double discount);
+    double calcDiscountedPriceMarkUp(double discount);
 
 }

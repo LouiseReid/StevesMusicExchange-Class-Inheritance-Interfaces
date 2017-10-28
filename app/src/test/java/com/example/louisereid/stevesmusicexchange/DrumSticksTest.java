@@ -40,7 +40,7 @@ public class DrumSticksTest {
 
     @Test
     public void discountCalc(){
-        drumSticks.calcDiscountedPrice(0.25);
+        drumSticks.calcDiscountedPriceMarkUp(0.25);
         assertEquals(11.25, drumSticks.getSellPrice(), 0.1);
     }
 

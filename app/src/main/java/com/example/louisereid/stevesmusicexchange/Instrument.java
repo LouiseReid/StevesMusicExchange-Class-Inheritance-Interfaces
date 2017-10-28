@@ -56,8 +56,8 @@ import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
     }
 
     @Override
-    public double calcDiscountedPrice(double discount) {
-        return this.sellPrice -= (this.sellPrice * discount);
+    public double calcDiscountedPriceMarkUp(double discount) {
+        return (this.sellPrice -= (this.sellPrice * discount)) - this.buyPrice;
     }
 
 }

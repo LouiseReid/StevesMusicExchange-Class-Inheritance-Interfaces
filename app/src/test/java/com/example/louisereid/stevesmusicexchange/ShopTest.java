@@ -74,20 +74,20 @@ public class ShopTest {
 
   @Test
   public void discountedItemsTotal(){
-    drum.calcDiscountedPrice(0.25);
-    piano.calcDiscountedPrice(0.25);
+    drum.calcDiscountedPriceMarkUp(0.25);
+    piano.calcDiscountedPriceMarkUp(0.25);
     shop.addToDiscounts(drum);
     shop.addToDiscounts(piano);
-    assertEquals(412.5, shop.discountedItemsTotal(), 0.1);
+    assertEquals(162.5, shop.discountedItemsTotal(), 0.1);
   }
 
   @Test
   public void profitBeforeRefunds(){
     shop.addToStock(piano);
     shop.addToStock(keyBoardStand);
-    drum.calcDiscountedPrice(0.25);
+    drum.calcDiscountedPriceMarkUp(0.25);
     shop.addToDiscounts(drum);
-    assertEquals(352.5, shop.profitBeforeRefunds(),0.1);
+    assertEquals(252.5, shop.profitBeforeRefunds(),0.1);
   }
 
 

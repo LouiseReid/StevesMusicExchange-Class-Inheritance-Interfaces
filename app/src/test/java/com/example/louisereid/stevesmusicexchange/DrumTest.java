@@ -65,7 +65,7 @@ public class DrumTest {
 
     @Test
     public void calcDiscount(){
-        drum.calcDiscountedPrice(0.15);
+        drum.calcDiscountedPriceMarkUp(0.15);
         assertEquals(212.5, drum.getSellPrice(), 0.1);
     }
 
