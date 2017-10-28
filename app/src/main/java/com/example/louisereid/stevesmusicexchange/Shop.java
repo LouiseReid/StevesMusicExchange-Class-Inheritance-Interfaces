@@ -44,7 +44,7 @@ public class Shop {
 
     }
 
-    public double totalProfit(){
+    public double fullPriceProfit(){
         double profit = 0;
         for(Sellable sellable : stock){
             profit += sellable.calcMarkUp();
@@ -61,7 +61,7 @@ public class Shop {
         for(Refundable refundable : refunds){
             totalRefunds += refundable.refund();
         }
-        return totalProfit() - totalRefunds;
+        return profitBeforeRefunds() - totalRefunds;
     }
 
     public void addToDiscounts(Discountable discountable){
@@ -75,6 +75,12 @@ public class Shop {
                 discountedTotal += discountable.calcDiscountedPrice(0);
             }
         return discountedTotal;
+    }
+
+    public double profitBeforeRefunds(){
+        double profit = 0;
+        profit += (fullPriceProfit() + discountedItemsTotal());
+        return profit;
     }
 
 

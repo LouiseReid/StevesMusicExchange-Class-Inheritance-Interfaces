@@ -42,11 +42,11 @@ public class ShopTest {
   }
 
   @Test
-  public void totalProfit(){
+  public void fullPriceProfit(){
     shop.addToStock(guitar);
     shop.addToStock(piano);
     shop.addToStock(drum);
-    assertEquals(450, shop.totalProfit(), 0.1);
+    assertEquals(450, shop.fullPriceProfit(), 0.1);
 
   }
 
@@ -80,4 +80,15 @@ public class ShopTest {
     shop.addToDiscounts(piano);
     assertEquals(412.5, shop.discountedItemsTotal(), 0.1);
   }
+
+  @Test
+  public void profitBeforeRefunds(){
+    shop.addToStock(piano);
+    shop.addToStock(keyBoardStand);
+    drum.calcDiscountedPrice(0.25);
+    shop.addToDiscounts(drum);
+    assertEquals(352.5, shop.profitBeforeRefunds(),0.1);
+  }
+
+
 }
