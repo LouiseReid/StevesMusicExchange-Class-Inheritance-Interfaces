@@ -6,5 +6,5 @@ package com.example.louisereid.stevesmusicexchange.Behaviours;
 
 public interface Sellable {
 
-    int calcMarkUp();
+    double calcMarkUp();
 }

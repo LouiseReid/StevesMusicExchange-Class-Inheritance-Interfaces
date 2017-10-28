@@ -25,16 +25,16 @@ public class GuitarStringTest {
 
     @Test
     public void hasBuyPrice(){
-        assertEquals(5, guitarString.getBuyPrice());
+        assertEquals(5, guitarString.getBuyPrice(), 0.1);
     }
 
     @Test
     public void hasSellPrice(){
-        assertEquals(10, guitarString.getSellPrice());
+        assertEquals(10, guitarString.getSellPrice(), 0.1);
     }
 
     @Test
     public void markUpCalc(){
-        assertEquals(5, guitarString.calcMarkUp());
+        assertEquals(5, guitarString.calcMarkUp(), 0.1);
     }
 }

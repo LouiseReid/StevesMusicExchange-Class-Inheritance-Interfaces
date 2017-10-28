@@ -25,16 +25,24 @@ public class DrumSticksTest {
 
     @Test
     public void hasBuyPrice(){
-        assertEquals(6, drumSticks.getBuyPrice());
+        assertEquals(6, drumSticks.getBuyPrice(), 0.1);
     }
 
     @Test
     public void hasSellPrice(){
-        assertEquals(15, drumSticks.getSellPrice());
+        assertEquals(15, drumSticks.getSellPrice(), 0.1);
     }
 
     @Test
     public void markUpCalc(){
-        assertEquals(9, drumSticks.calcMarkUp());
+        assertEquals(9, drumSticks.calcMarkUp(), 0.1);
     }
+
+    @Test
+    public void discountCalc(){
+        drumSticks.calcDiscountedPrice(0.25);
+        assertEquals(11.25, drumSticks.getSellPrice(), 0.1);
+    }
+
+
 }

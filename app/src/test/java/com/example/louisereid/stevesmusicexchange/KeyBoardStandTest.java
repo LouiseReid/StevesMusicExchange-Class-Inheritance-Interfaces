@@ -25,17 +25,17 @@ public class KeyBoardStandTest {
 
     @Test
     public void hasBuyPrice(){
-        assertEquals(10, keyBoardStand.getBuyPrice());
+        assertEquals(10, keyBoardStand.getBuyPrice(), 0.1);
     }
 
     @Test
     public void hasSellPrice(){
-        assertEquals(25, keyBoardStand.getSellPrice());
+        assertEquals(25, keyBoardStand.getSellPrice(), 0.1);
     }
 
     @Test
     public void markUpCalc(){
-        assertEquals(15, keyBoardStand.calcMarkUp());
+        assertEquals(15, keyBoardStand.calcMarkUp(), 0.1);
     }
 
 

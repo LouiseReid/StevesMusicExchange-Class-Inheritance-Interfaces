@@ -50,17 +50,23 @@ public class DrumTest {
 
     @Test
     public void hasBuyPrice(){
-        assertEquals(100, drum.getBuyPrice());
+        assertEquals(100, drum.getBuyPrice(), 0.1);
     }
 
     @Test
     public void hasSellPrice(){
-        assertEquals(250, drum.getSellPrice());
+        assertEquals(250, drum.getSellPrice(), 0.1);
     }
 
     @Test
     public void testMarkUpCalc(){
-        assertEquals(150, drum.calcMarkUp());
+        assertEquals(150, drum.calcMarkUp(), 0.1);
+    }
+
+    @Test
+    public void calcDiscount(){
+        drum.calcDiscountedPrice(0.15);
+        assertEquals(212.5, drum.getSellPrice(), 0.1);
     }
 
 }

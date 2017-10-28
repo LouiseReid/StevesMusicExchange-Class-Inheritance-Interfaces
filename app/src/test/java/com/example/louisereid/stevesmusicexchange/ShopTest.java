@@ -17,6 +17,7 @@ public class ShopTest {
     Guitar guitar;
     Piano piano;
     Drum drum;
+    KeyBoardStand keyBoardStand;
 
   @Before
     public void before(){
@@ -24,6 +25,7 @@ public class ShopTest {
       guitar = new Guitar("wood", "brown", InstrumentTypes.STRING, 75, 225, 6, "bass");
       piano = new Piano("wood", "black", InstrumentTypes.PERCUSSION, 150, 300, 88, 2);
       drum = new Drum("aluminium", "silver", InstrumentTypes.PERCUSSION, 100, 250, 5, 2);
+      keyBoardStand = new KeyBoardStand("X Frame Stand", 10, 25);
   }
 
   @Test
@@ -44,7 +46,38 @@ public class ShopTest {
     shop.addToStock(guitar);
     shop.addToStock(piano);
     shop.addToStock(drum);
-    assertEquals(450, shop.totalProfit());
+    assertEquals(450, shop.totalProfit(), 0.1);
 
+  }
+
+  @Test
+  public void canAddToRefunds(){
+    shop.addToRefunds(keyBoardStand);
+    assertEquals(1, shop.getRefunds().size());
+  }
+
+  @Test
+  public void profitAfterRefunds(){
+    shop.addToStock(guitar);
+    shop.addToStock(piano);
+    shop.addToStock(drum);
+    shop.addToRefunds(keyBoardStand);
+    assertEquals(425, shop.profitAfterRefund(), 0.1);
+
+  }
+
+  @Test
+  public void canAddToDiscounts(){
+    shop.addToDiscounts(drum);
+    assertEquals(1, shop.getDiscounts().size());
+  }
+
+  @Test
+  public void discountedItemsTotal(){
+    drum.calcDiscountedPrice(0.25);
+    piano.calcDiscountedPrice(0.25);
+    shop.addToDiscounts(drum);
+    shop.addToDiscounts(piano);
+    assertEquals(412.5, shop.discountedItemsTotal(), 0.1);
   }
 }

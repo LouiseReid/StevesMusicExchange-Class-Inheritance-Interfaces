@@ -50,16 +50,16 @@ public class GuitarTest {
 
     @Test
     public void hasBuyPrice(){
-        assertEquals(75, guitar.getBuyPrice());
+        assertEquals(75, guitar.getBuyPrice(), 0.1);
     }
 
     @Test
     public void hasSellPrice(){
-        assertEquals(225, guitar.getSellPrice());
+        assertEquals(225, guitar.getSellPrice(), 0.1);
     }
 
     @Test
     public void testMarkUpCalc(){
-        assertEquals(150, guitar.calcMarkUp());
+        assertEquals(150, guitar.calcMarkUp(), 0.1);
     }
 }

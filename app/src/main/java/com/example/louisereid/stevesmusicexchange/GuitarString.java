@@ -6,7 +6,7 @@ package com.example.louisereid.stevesmusicexchange;
 
 public class GuitarString extends Accessories {
 
-    public GuitarString(String description, int buyPrice, int sellPrice) {
+    public GuitarString(String description, double buyPrice, double sellPrice) {
         super(description, buyPrice, sellPrice);
     }
 

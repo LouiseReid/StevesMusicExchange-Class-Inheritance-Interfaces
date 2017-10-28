@@ -1,18 +1,20 @@
 package com.example.louisereid.stevesmusicexchange;
 
+import com.example.louisereid.stevesmusicexchange.Behaviours.Discountable;
+import com.example.louisereid.stevesmusicexchange.Behaviours.Refundable;
 import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
 
 /**
  * Created by louisereid on 27/10/2017.
  */
 
-abstract public class Accessories implements Sellable {
+ abstract public class Accessories implements Sellable, Refundable, Discountable {
 
     String description;
-    int buyPrice;
-    int sellPrice;
+    double buyPrice;
+    double sellPrice;
 
-    public Accessories(String description, int buyPrice, int sellPrice) {
+    public Accessories(String description, double buyPrice, double sellPrice) {
         this.description = description;
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
@@ -22,16 +24,25 @@ abstract public class Accessories implements Sellable {
         return description;
     }
 
-    public int getBuyPrice() {
+    public double getBuyPrice() {
         return buyPrice;
     }
 
-    public int getSellPrice() {
+    public double getSellPrice() {
         return sellPrice;
     }
 
     @Override
-    public int calcMarkUp() {
+    public double calcMarkUp() {
         return this.sellPrice - this.buyPrice;
+    }
+
+    public double refund(){
+        return this.sellPrice;
+    }
+
+    public double calcDiscountedPrice(double discount){
+        return this.sellPrice -= (this.sellPrice * discount);
+
     }
 }

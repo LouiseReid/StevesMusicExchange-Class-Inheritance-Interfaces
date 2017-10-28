@@ -9,7 +9,7 @@ public class Drum extends Instrument {
     private int drums;
     private int cymbals;
 
-    public Drum(String material, String colour, InstrumentTypes type, int buyPrice, int sellPrice, int drums, int cymbals) {
+    public Drum(String material, String colour, InstrumentTypes type, double buyPrice, double sellPrice, int drums, int cymbals) {
         super(material, colour, type, buyPrice, sellPrice);
         this.drums = drums;
         this.cymbals = cymbals;

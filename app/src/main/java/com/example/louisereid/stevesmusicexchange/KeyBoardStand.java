@@ -5,7 +5,7 @@ package com.example.louisereid.stevesmusicexchange;
  */
 
 public class KeyBoardStand extends Accessories {
-    public KeyBoardStand(String description, int buyPrice, int sellPrice) {
+    public KeyBoardStand(String description, double buyPrice, double sellPrice) {
         super(description, buyPrice, sellPrice);
     }
 }

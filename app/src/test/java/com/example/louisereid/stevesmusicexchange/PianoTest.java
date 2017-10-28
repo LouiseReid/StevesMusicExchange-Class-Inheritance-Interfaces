@@ -49,16 +49,16 @@ public class PianoTest {
 
     @Test
     public void hasBuyPrice(){
-        assertEquals(150, piano.getBuyPrice());
+        assertEquals(150, piano.getBuyPrice(), 0.1);
     }
 
     @Test
     public void hasSellPrice(){
-        assertEquals(300, piano.getSellPrice());
+        assertEquals(300, piano.getSellPrice(), 0.1);
     }
 
     @Test
     public void testMarkUpCalc(){
-        assertEquals(150, piano.calcMarkUp());
+        assertEquals(150, piano.calcMarkUp(), 0.1);
     }
 }

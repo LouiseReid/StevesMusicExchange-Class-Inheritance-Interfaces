@@ -46,16 +46,16 @@ public class TrumpetTest {
 
     @Test
     public void hasBuyPrice(){
-        assertEquals(50, trumpet.getBuyPrice());
+        assertEquals(50, trumpet.getBuyPrice(), 0.1);
     }
 
     @Test
     public void hasSellPrice(){
-        assertEquals(175, trumpet.getSellPrice());
+        assertEquals(175, trumpet.getSellPrice(), 0.1);
     }
 
     @Test
     public void testMarkUpCalc(){
-        assertEquals(125, trumpet.calcMarkUp());
+        assertEquals(125, trumpet.calcMarkUp(), 0.1);
     }
 }

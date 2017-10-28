@@ -1,5 +1,6 @@
 package com.example.louisereid.stevesmusicexchange;
 
+import com.example.louisereid.stevesmusicexchange.Behaviours.Discountable;
 import com.example.louisereid.stevesmusicexchange.Behaviours.Playable;
 import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
 
@@ -7,15 +8,15 @@ import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
  * Created by louisereid on 27/10/2017.
  */
 
- abstract public class Instrument implements Playable, Sellable {
+ abstract public class Instrument implements Playable, Sellable, Discountable {
 
     String material;
     String colour;
     InstrumentTypes type;
-    int buyPrice;
-    int sellPrice;
+    double buyPrice;
+    double sellPrice;
 
-    public Instrument(String material, String colour, InstrumentTypes type, int buyPrice, int sellPrice) {
+    public Instrument(String material, String colour, InstrumentTypes type, double buyPrice, double sellPrice) {
         this.material = material;
         this.colour = colour;
         this.type = type;
@@ -35,11 +36,11 @@ import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
         return type;
     }
 
-    public int getBuyPrice() {
+    public double getBuyPrice() {
         return buyPrice;
     }
 
-    public int getSellPrice() {
+    public double getSellPrice() {
         return sellPrice;
     }
 
@@ -50,8 +51,13 @@ import com.example.louisereid.stevesmusicexchange.Behaviours.Sellable;
 
 
     @Override
-    public int calcMarkUp() {
+    public double calcMarkUp() {
         return this.sellPrice - this.buyPrice;
+    }
+
+    @Override
+    public double calcDiscountedPrice(double discount) {
+        return this.sellPrice -= (this.sellPrice * discount);
     }
 
 }

@@ -5,7 +5,9 @@ package com.example.louisereid.stevesmusicexchange;
  */
 
 public class DrumSticks extends Accessories {
-    public DrumSticks(String description, int buyPrice, int sellPrice) {
+    public DrumSticks(String description, double buyPrice, double sellPrice) {
         super(description, buyPrice, sellPrice);
     }
+
+
 }
